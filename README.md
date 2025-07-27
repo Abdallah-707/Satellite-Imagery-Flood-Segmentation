@@ -114,6 +114,7 @@ Visit `http://localhost:5000` and upload a TIFF image to see the predicted flood
 - Training loss and IoU curves
 
 > 📊 Example:
+> 
 > ![Ground Truth](https://i.ibb.co/zYc4vxR/68747470733a2f2f692e6962622e636f2f574e44685a3559342f696d6167652e706e67-2.png)
 > ![Predection](https://i.ibb.co/rfFDPp1D/68747470733a2f2f692e6962622e636f2f396b734b575176432f696d6167652e706e67.png)
 
