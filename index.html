@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Flood Segmentation</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; background-color: #f4f4f9; text-align: center; }
+        h1 { color: #333; }
+        .container { background: white; padding: 2em; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; }
+        input[type=file], button { margin-top: 1em; padding: 0.5em 1em; }
+        .result { margin-top: 2em; }
+        h2 { color: #555; }
+        img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Flood Area Detection from Satellite Imagery</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <p>Upload a 12-channel TIFF image to predict the flood mask.</p>
+            <input type="file" name="file" accept=".tif,.tiff" required>
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_image %}
+        <div class="result">
+            <h2>Prediction Mask</h2>
+            <p>(White pixels indicate flooded areas)</p>
+            <img src="data:image/png;base64,{{ prediction_image }}" alt="Prediction Mask">
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
